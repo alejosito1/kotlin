@@ -49,4 +49,16 @@ fun main(args: Array<String>) {
         val numeroAleatorio = (0..100).random()
         println("El numero generado es $numeroAleatorio")
     } while (numeroAleatorio > 50)
+
+    //For
+    val listaDeFrutas = listOf("Manzana", "Pera", "Frambuesa", "Durazno")
+    for (fruta in listaDeFrutas) println("Hoy voy a comerme una fruta llamada $fruta")
+    listaDeFrutas.forEach{fruta -> println("Hoy voy a comerme una fruta nueva $fruta") }
+
+    val caracteresDeFrutas: List<Int> = listaDeFrutas.map { fruta -> fruta.length }
+    println(caracteresDeFrutas)
+
+    val listaFiltrada = caracteresDeFrutas.filter { cacteresDeFrutas -> cacteresDeFrutas>5 }
+    println(listaFiltrada)
+    
 }
