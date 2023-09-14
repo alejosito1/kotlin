@@ -77,4 +77,10 @@ fun main(args: Array<String>) {
     val segundoValor = 0
     val resultado : Int = try { primerValor / segundoValor } catch (exception : Exception){0}
     println(resultado)
+
+    //Elvis operator
+    //Permite asignar un valor por defecto a una variable null, (?:)
+    var nombre4: String? = null
+    val caracteresDeNombre: Int = nombre4?.length ?:0
+    println(caracteresDeNombre)
 }
