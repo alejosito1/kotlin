@@ -60,5 +60,21 @@ fun main(args: Array<String>) {
 
     val listaFiltrada = caracteresDeFrutas.filter { cacteresDeFrutas -> cacteresDeFrutas>5 }
     println(listaFiltrada)
-    
+
+    //Try catch
+    var nombre3 : String? = null
+    try {
+        throw NullPointerException("Referencia nula.")
+
+    } catch (exception : NullPointerException){
+        println("Ha ocurrido un error")
+    } finally {
+        println("Finalmente ha ocurrido un error... Cerrando aplicacion.")
+    }
+    println(nombre3?.length)
+
+    val primerValor = 0
+    val segundoValor = 0
+    val resultado : Int = try { primerValor / segundoValor } catch (exception : Exception){0}
+    println(resultado)
 }
