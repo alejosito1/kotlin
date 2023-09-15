@@ -135,4 +135,34 @@ fun main(args: Array<String>) {
     println(mensajesDeNumeros)
     val numerosFiltrados = numerosDeLoteria.filter { numero -> numero > 50 }
     println(numerosFiltrados)
+
+    //Maps
+    val edadDeSuperHeroes = mapOf(
+        "Ironman" to 35,
+        "Spiderman" to 23,
+        "Capitan America" to 99
+    )
+    println(edadDeSuperHeroes)
+
+    val edadSuperHeroesMutable = mutableMapOf(
+        "Ironman" to 35,
+        "Spiderman" to 23,
+        "Capitan America" to 99
+    )
+    println(edadSuperHeroesMutable)
+    edadSuperHeroesMutable.put("Wolverine", 45)
+    println(edadSuperHeroesMutable)
+
+    edadSuperHeroesMutable["Storm"] = 30
+    println(edadSuperHeroesMutable)
+
+    val edadIroman = edadSuperHeroesMutable["Ironman"]
+    println(edadIroman)
+
+    edadSuperHeroesMutable.remove("Wolverine")
+    println(edadSuperHeroesMutable)
+
+    println(edadSuperHeroesMutable.keys)
+    println(edadSuperHeroesMutable.values)
+
 }
