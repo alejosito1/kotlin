@@ -184,6 +184,10 @@ fun main(args: Array<String>) {
     val fraseAleatoria = "En Platzi nunca paramos de aprender".randomCase()
     println(fraseAleatoria)
     imprimirFrase(fraseAleatoria)
+
+    //Tipos de parámetros
+    //Parametros nombrados salen en azul, se suele suele usar para dos o mas parametros.
+    imprimirNombre(nombre ="Sergio", apellido = "Torres")
 }
 //Funciones y funciones de extension.
 fun imprimirFrase(frase : String) : Unit{
@@ -197,4 +201,11 @@ fun String.randomCase() : String {
     } else {
         return this.toLowerCase()
     }
+}
+
+//Tipos de parámetros
+fun imprimirNombre(nombre: String,segundoNombre: String = "", apellido: String){
+    println("Mi nombre es $nombre y mi apellido es $apellido")
+    //Al parametro segundoNombre se le esta asignando un valor por defecto.
+    println("Mi nombre completo es $nombre $segundoNombre $apellido")
 }
