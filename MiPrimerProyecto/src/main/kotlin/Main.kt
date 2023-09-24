@@ -165,4 +165,36 @@ fun main(args: Array<String>) {
     println(edadSuperHeroesMutable.keys)
     println(edadSuperHeroesMutable.values)
 
+    //Sets
+    val vocalesRepetidas = setOf("a","e","i","o","u","a","e","i","o","u")
+    println(vocalesRepetidas)
+
+    val numerosFavoritos = mutableSetOf(1,2,3,4)
+    println(numerosFavoritos)
+    numerosFavoritos.add(5)
+    println(numerosFavoritos)
+
+    numerosFavoritos.remove(5)
+    println(numerosFavoritos)
+
+    val valorDelSet: Int? = numerosFavoritos.first { numero -> numero > 2 }
+    println(valorDelSet)
+
+    //Funciones y funciones de extension.
+    val fraseAleatoria = "En Platzi nunca paramos de aprender".randomCase()
+    println(fraseAleatoria)
+    imprimirFrase(fraseAleatoria)
+}
+//Funciones y funciones de extension.
+fun imprimirFrase(frase : String) : Unit{
+    println("Tu frase es : $frase")
+}
+fun String.randomCase() : String {
+    val numeroAleatorio = 0..99
+    val resultadoAleatorio = numeroAleatorio.random()
+    if (resultadoAleatorio.rem(2) == 0) {
+        return this.toUpperCase()
+    } else {
+        return this.toLowerCase()
+    }
 }
