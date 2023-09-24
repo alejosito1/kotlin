@@ -188,6 +188,17 @@ fun main(args: Array<String>) {
     //Tipos de parámetros
     //Parametros nombrados salen en azul, se suele suele usar para dos o mas parametros.
     imprimirNombre(nombre ="Sergio", apellido = "Torres")
+
+    //Lambdas
+    val myLambda : (String) -> Int = {
+        valor  -> valor.length
+    }
+    val lambdaEjecutada: Int = myLambda("Hola")
+    println(lambdaEjecutada)
+
+    val saludos = listOf("Hello", "Hola", "Ciao")
+    val longitudDeSaludos = saludos.map(myLambda)
+    println(longitudDeSaludos)
 }
 //Funciones y funciones de extension.
 fun imprimirFrase(frase : String) : Unit{
