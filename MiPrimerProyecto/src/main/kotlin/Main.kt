@@ -199,6 +199,17 @@ fun main(args: Array<String>) {
     val saludos = listOf("Hello", "Hola", "Ciao")
     val longitudDeSaludos = saludos.map(myLambda)
     println(longitudDeSaludos)
+
+    //High Order Functions
+    val largoDelValorInicial = superFuncion(valorInicial = "Hola", block = {
+        valor -> valor.length
+    })
+    println(largoDelValorInicial)
+
+    val lambda: () -> String = funcionInception("Sergio")
+    val valorLambda: String = lambda()
+    println(valorLambda)
+    
 }
 //Funciones y funciones de extension.
 fun imprimirFrase(frase : String) : Unit{
@@ -219,4 +230,15 @@ fun imprimirNombre(nombre: String,segundoNombre: String = "", apellido: String){
     println("Mi nombre es $nombre y mi apellido es $apellido")
     //Al parametro segundoNombre se le esta asignando un valor por defecto.
     println("Mi nombre completo es $nombre $segundoNombre $apellido")
+}
+
+//High Order Functions
+fun superFuncion(valorInicial : String, block : (String) -> Int) : Int {
+    return block(valorInicial)
+}
+
+fun funcionInception(nombre : String) : () -> String{
+    return {
+        "Hola desde la lambda $nombre"
+    }
 }
