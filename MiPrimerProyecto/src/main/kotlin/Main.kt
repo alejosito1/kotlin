@@ -227,6 +227,18 @@ fun main(args: Array<String>) {
         println("Nuestros colores son $this")
         println("Esta lista tiene una cantidad de colores de $size")
     }
+
+    //Run
+    val moviles = mutableListOf("Google Pixel 2XL", "Google Pixel 4a", "Huawei Redmi 10", "Xiaomi Mi A3")
+        .run {
+            removeIf {
+                movil -> movil.contains("Google")
+            }
+            this
+        }
+    println(moviles)
+
+    //Apply
     
 }
 //Funciones y funciones de extension.
