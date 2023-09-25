@@ -209,6 +209,17 @@ fun main(args: Array<String>) {
     val lambda: () -> String = funcionInception("Sergio")
     val valorLambda: String = lambda()
     println(valorLambda)
+
+    //Scope functions
+    //Let
+    var nombreLet : String? = null
+    nombreLet?.let{
+        valor -> println("El nombre no es nulo, es $valor")
+    }
+    nombreLet = "Sergio"
+    nombreLet?.let{
+        valor -> println("El nombre no es nulo, es $valor")
+    }
     
 }
 //Funciones y funciones de extension.
