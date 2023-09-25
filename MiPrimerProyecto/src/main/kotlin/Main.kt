@@ -220,6 +220,13 @@ fun main(args: Array<String>) {
     nombreLet?.let{
         valor -> println("El nombre no es nulo, es $valor")
     }
+
+    //With
+    val colores = listOf("Azul", "Amarillo", "Rojo")
+    with(colores){
+        println("Nuestros colores son $this")
+        println("Esta lista tiene una cantidad de colores de $size")
+    }
     
 }
 //Funciones y funciones de extension.
