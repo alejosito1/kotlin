@@ -239,7 +239,18 @@ fun main(args: Array<String>) {
     println(moviles)
 
     //Apply
-    
+    val moviles2 = mutableListOf("Google Pixel 2XL", "Google Pixel 4a", "Huawei Redmi 10", "Xiaomi Mi A3")
+        .apply {
+            removeIf { movil -> movil.contains("Google")}
+        }
+    println(moviles2)
+
+    val coloresApply : MutableList<String>? = mutableListOf("Amarillo", "Azul", "Rojo")
+    coloresApply?.apply {
+        println("Nuestros colores son $this")
+        println("La cantidad de colores es $size")
+    }
+
 }
 //Funciones y funciones de extension.
 fun imprimirFrase(frase : String) : Unit{
