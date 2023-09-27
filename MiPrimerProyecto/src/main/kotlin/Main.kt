@@ -251,6 +251,14 @@ fun main(args: Array<String>) {
         println("La cantidad de colores es $size")
     }
 
+    //Also
+    val movilesAlso = mutableListOf("Google Pixel 2XL", "Google Pixel 4a", "Huawei Redmi 10", "Xiaomi Mi A3")
+        .also {
+            lista -> println("El valor original de la lista es $lista")
+        }.asReversed()
+    println(movilesAlso)
+
+
 }
 //Funciones y funciones de extension.
 fun imprimirFrase(frase : String) : Unit{
