@@ -60,17 +60,20 @@ fun mostrarRespuestas(){
 }
 
 fun mostrarRespuestasPorTipo(tipoDeRespuesta : String = "TODOS"){
+    val printAnswers: (Map<String, String>) -> Unit = {
+        it.keys.forEach { answer -> println(answer) }
+    }
     when(tipoDeRespuesta){
         "TODOS" -> respuestas.keys.forEach{respuesta -> println(respuesta)}
 
         RESPUESTA_AFIRMATIVA -> respuestas.filterValues { values -> values == RESPUESTA_AFIRMATIVA }
-            .also { respuestasPositivas -> println(respuestasPositivas.keys) }
+            .also { printAnswers(it) }
 
         RESPUESTA_NEGATIVA -> respuestas.filterValues { values -> values == RESPUESTA_NEGATIVA }
-            .also { respuestasNegativas -> println(respuestasNegativas.keys) }
+            .also { printAnswers(it) }
 
         RESPUESTA_DUDOSA -> respuestas.filterValues { values -> values == RESPUESTA_DUDOSA }
-            .also { respuestasDudosas -> println(respuestasDudosas.keys) }
+            .also { printAnswers(it) }
     }
 }
 
